@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.senha-gerador {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.senha-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+#senhaGerada {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: 'Courier New', monospace;
+    background: #f8f9fa;
+    transition: border-color 0.3s;
+}
+
+#senhaGerada:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.btn-copiar {
+    padding: 15px 20px;
+    background: #f8f9fa;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3s;
+}
+
+.btn-copiar:hover {
+    background: #e9ecef;
+    border-color: #667eea;
+    transform: scale(1.05);
+}
+
+.btn-copiar.copiado {
+    background: #28a745;
+    border-color: #28a745;
+    color: white;
+}
+
+.controles {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.controle-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.controle-grupo label {
+    color: #555;
+    font-weight: 500;
+}
+
+#tamanhoSenha {
+    width: 100%;
+    height: 6px;
+    -webkit-appearance: none;
+    background: #e0e0e0;
+    border-radius: 3px;
+    outline: none;
+    transition: background 0.3s;
+}
+
+#tamanhoSenha::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #667eea;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#tamanhoSenha::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+}
+
+#tamanhoSenha::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #667eea;
+    cursor: pointer;
+    border: none;
+}
+
+.opcoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.opcoes label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #555;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.opcoes input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #667eea;
+}
+
+.forca-senha {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.forca-senha label {
+    color: #555;
+    font-weight: 500;
+    min-width: 100px;
+}
+
+.barra-forca {
+    flex: 1;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+#indicadorForca {
+    height: 100%;
+    width: 0%;
+    border-radius: 4px;
+    transition: all 0.5s ease;
+}
+
+#textoForca {
+    min-width: 60px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.forca-fraca {
+    background: #dc3545;
+    width: 33%;
+}
+
+.forca-media {
+    background: #ffc107;
+    width: 66%;
+}
+
+.forca-forte {
+    background: #28a745;
+    width: 100%;
+}
+
+.btn-gerar {
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-gerar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-gerar:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+    .senha-gerador {
+        padding: 20px;
+    }
+    
+    .opcoes {
+        grid-template-columns: 1fr;
+    }
+    
+    h1 {
+        font-size: 22px;
+    }
+    
+    #senhaGerada {
+        font-size: 14px;
+    }
+}

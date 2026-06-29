@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Senhas Seguras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="senha-gerador">
+            <h1>🔐 Gerador de Senhas</h1>
+            
+            <div class="senha-container">
+                <input type="text" id="senhaGerada" readonly placeholder="Clique em Gerar Senha">
+                <button id="copiarSenha" class="btn-copiar" title="Copiar senha">📋</button>
+            </div>
+
+            <div class="controles">
+                <div class="controle-grupo">
+                    <label for="tamanhoSenha">Tamanho da senha: <span id="tamanhoValor">12</span></label>
+                    <input type="range" id="tamanhoSenha" min="6" max="32" value="12">
+                </div>
+
+                <div class="opcoes">
+                    <label>
+                        <input type="checkbox" id="incluirMaiusculas" checked>
+                        Letras Maiúsculas (A-Z)
+                    </label>
+                    <label>
+                        <input type="checkbox" id="incluirMinusculas" checked>
+                        Letras Minúsculas (a-z)
+                    </label>
+                    <label>
+                        <input type="checkbox" id="incluirNumeros" checked>
+                        Números (0-9)
+                    </label>
+                    <label>
+                        <input type="checkbox" id="incluirEspeciais" checked>
+                        Caracteres Especiais (!@#$%^&*)
+                    </label>
+                </div>
+
+                <div class="forca-senha">
+                    <label>Força da senha:</label>
+                    <div class="barra-forca">
+                        <div id="indicadorForca" class="forca-fraca"></div>
+                    </div>
+                    <span id="textoForca">Fraca</span>
+                </div>
+
+                <button id="gerarSenha" class="btn-gerar">🔄 Gerar Nova Senha</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
